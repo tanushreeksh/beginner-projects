@@ -14,42 +14,24 @@ A simple Python command-line tool that automates basic dataset cleaning tasks su
 - Pandas
 - OpenPyXL(for Excel file support)
 
-## Working
+## Output Files
 
-The cleaning pipeline performs the following steps:
+The tool generates:
 
-1. Dataset Loading
+- datasetname_clean.csv → Cleaned dataset
 
-Automatically detects file type (CSV or Excel)
+- datasetname_duplicates.csv → Duplicate records (if present)
 
-2. Duplicate Handling
+- datasetname_report.txt → Cleaning summary report
 
-Identifies duplicate rows
+## Example Use Case
 
-Saves duplicate records in a separate file
+Useful for quick preprocessing of small to medium structured datasets before exploratory data analysis or machine learning workflows.
 
-Removes duplicates from main dataset
+## Limitations
 
-3. Missing Value Handling
+1. Uses fixed cleaning strategies (median / "Unknown")
 
-Drops rows where ID-related columns contain missing values
+2. Currently supports only CSV and Excel formats
 
-Fills numeric columns using median values
-
-Fills categorical columns with "Unknown"
-
-4. Report Generation
-
-Creates a text report summarizing:
-
-Initial and final row count
-
-Duplicate records removed
-
-Rows dropped due to missing IDs
-
-Column-wise missing value summary
-
-## Purpose
-This project was built to strengthen foundational data preprocessing and automation skills.
-
+3. Does not include advanced data validation or visualization
