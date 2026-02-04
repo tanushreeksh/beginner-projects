@@ -1,6 +1,6 @@
 # DataPrep Assistant
 
-A beginner-friendly Python tool that performs basic data cleaning and dataset understanding.
+A simple Python command-line tool that automates basic dataset cleaning tasks such as duplicate removal, missing value handling, and cleaning report generation.
 
 ## Features
 - Detects and removes duplicate rows
@@ -12,17 +12,43 @@ A beginner-friendly Python tool that performs basic data cleaning and dataset un
 ## Tech Stack
 - Python
 - Pandas
-- OpenPyXL
+- OpenPyXL(for Excel file support)
 
-## How To Run
-1. Clone repository
-2. Run main.py
-3. Enter dataset path and name when prompted
+## Working
 
-## Output
-- Cleaned dataset file
-- Duplicate records file (if present)
-- Cleaning report summary
+The cleaning pipeline performs the following steps:
+
+1. Dataset Loading
+
+Automatically detects file type (CSV or Excel)
+
+2. Duplicate Handling
+
+Identifies duplicate rows
+
+Saves duplicate records in a separate file
+
+Removes duplicates from main dataset
+
+3. Missing Value Handling
+
+Drops rows where ID-related columns contain missing values
+
+Fills numeric columns using median values
+
+Fills categorical columns with "Unknown"
+
+4. Report Generation
+
+Creates a text report summarizing:
+
+Initial and final row count
+
+Duplicate records removed
+
+Rows dropped due to missing IDs
+
+Column-wise missing value summary
 
 ## Purpose
 This project was built to strengthen foundational data preprocessing and automation skills.
